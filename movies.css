@@ -1,0 +1,65 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: silver;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    align-self: flex-start;
+    margin-left: 20px;
+}
+
+form {
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transform: scale(1.6);
+}
+
+.form-input {
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+}
+
+#ratingValue {
+    font-weight: bold;
+    margin-left: 5px;
+    align-self: flex-start;
+}
+
+
+#movieListContainer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    width: 45%;
+    align-self: flex-start;
+    border-radius: 2px;
+}
+
+.delete {
+    transform: scale(.6)
+}

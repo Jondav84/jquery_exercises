@@ -1,0 +1,43 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="movies.css" />
+    <title>Silver Screen</title>
+  </head>
+  <body>
+    <h1>My Movies list:</h1>
+    <div id="movieListContainer">
+      <ul></ul>
+    </div>
+    <form class="movie-form">
+      <label for="title">Title:</label>
+      <input class="form-input" id="title" type="text" />
+      <div id="rating-container">
+        <label class="form-input" for="rating">Rating:</label>
+        <div id="slider-container">
+          <span id="ratingValue">0</span>
+          <input
+            class="form-input"
+            id="rating"
+            type="range"
+            min="0"
+            max="10"
+            step="0.1"
+            value="0"
+          />
+        </div>
+      </div>
+      <button type="submit" id="post">Judgement</button>
+    </form>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="movies.js"></script>
+  </body>
+</html>
