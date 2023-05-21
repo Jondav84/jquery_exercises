@@ -38,7 +38,7 @@ $(document).ready(function () {
 
   $("ul").on("click", ".delete", function () {
     $(this).parent().remove();
-    updatLocalStorage();
+    updateLocalStorage();
   });
 
   if (localStorage.getItem("movies")) {
@@ -46,10 +46,14 @@ $(document).ready(function () {
       $("ul").append(
         $("<li>")
           .text(movie)
-          .append($("<button>").text("x").on("click"), function () {
-            $(this).parent().remove();
-            updatLocalStorage();
-          })
+          .append(
+            $("<button>")
+              .text("x")
+              .on("click", function () {
+                $(this).parent().remove();
+                updateLocalStorage();
+              })
+          )
       );
     });
   }
