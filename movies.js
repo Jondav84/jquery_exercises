@@ -20,41 +20,37 @@ $(document).ready(function () {
     })
     .trigger("input");
 
+  function addListItem() {
+    $("ul").append(
+      $("<li>")
+        .text(`${$("#title").val()} - ${$("#rating").val()}/10  `)
+        .append(
+          $("<button>")
+            .text("x")
+            .addClass("delete")
+            .on("click", function () {
+              $(this).parent().remove();
+              updateLocalStorage();
+            })
+        )
+    );
+  }
+
   $("#post").on("click", function (e) {
     e.preventDefault();
     if ($("#title").val().length < 2) {
       alert("Title must Contain at least 2 letters");
       return;
     }
-    $("ul").append(
-      $("<li>")
-        .text(`${$("#title").val()} - ${$("#rating").val()}/10  `)
-        .append($("<button>").text("x").addClass("delete"))
-    );
-    updateLocalStorage();
+    addListItem();
     $(".movie-form")[0].reset();
     $("#ratingValue").text(0.0);
-  });
-
-  $("ul").on("click", ".delete", function () {
-    $(this).parent().remove();
     updateLocalStorage();
   });
 
   if (localStorage.getItem("movies")) {
     JSON.parse(localStorage.getItem("movies")).forEach((movie) => {
-      $("ul").append(
-        $("<li>")
-          .text(movie)
-          .append(
-            $("<button>")
-              .text("x")
-              .on("click", function () {
-                $(this).parent().remove();
-                updateLocalStorage();
-              })
-          )
-      );
+      addListItem();
     });
   }
 });
