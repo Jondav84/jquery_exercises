@@ -61,5 +61,6 @@ form {
 }
 
 .delete {
-    transform: scale(.6)
+    transform: scale(.6);
+    background-color: red;
 }

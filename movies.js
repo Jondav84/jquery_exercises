@@ -35,7 +35,9 @@ $(document).ready(function () {
   //function to create list item on button click
   $("#post").on("click", function (e) {
     if ($("#title").val().length < 2) {
-      alert("Title must Contain at least 2 letters");
+      alert(
+        "Title must Contain at least 2 letters, sorry to the 215 movies that don't!"
+      );
       return;
     }
     addListItem();
